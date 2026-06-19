@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 
 <link rel="stylesheet" href="assets/fonts/fonts.css">
-<link rel="preload" as="image" href="assets/hero.jpg">
+<link rel="preload" as="image" href="assets/hero.png">
 <link rel="preload" href="assets/fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/CormorantGaramond-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -85,10 +85,8 @@
   .d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}.d4{animation-delay:.36s}.d5{animation-delay:.46s}
 
   /* HERO — full viewport */
-  /* Hintergrund an den Ton des Hero-Bilds angepasst, damit es nahtlos einblendet.
-     Bei transparentem ODER flachem #F7F4EF-Hero-Bild: background auf var(--canvas) zurücksetzen. */
   .hero{position:relative;min-height:calc(100svh - var(--announce-h) - var(--header-h));
-    display:flex;flex-direction:column;overflow:hidden;background:#EFE7DC}
+    display:flex;flex-direction:column;overflow:hidden}
   .hero-glow{position:absolute;top:-12%;right:-8%;width:60%;height:80%;pointer-events:none;
     background:radial-gradient(circle at 60% 40%, rgba(123,196,196,.20), transparent 62%);filter:blur(8px)}
   .hero-inner{flex:1;display:grid;gap:clamp(18px,4vw,56px);align-items:center;
@@ -306,7 +304,7 @@
     <!-- HERO-VISUAL: echtes KI-Bild (Hintergrund blendet mit der Hero-Farbe). -->
     <div class="hero-figure reveal d3">
       <div class="glow2" aria-hidden="true"></div>
-      <img src="assets/hero.jpg" alt="DEMAY Düfte – Boutique Gummersbach" width="1122" height="1402" fetchpriority="high">
+      <img src="assets/hero.png" alt="DEMAY Düfte – Boutique Gummersbach" width="920" height="1150" fetchpriority="high">
       <div class="offer-chip">
         <span class="pct">10%</span>
         <small>Willkommensgutschein auf deinen ersten Einkauf</small>
