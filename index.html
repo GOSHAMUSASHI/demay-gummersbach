@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>DEMAY Parfümerie Gummersbach — Nischendüfte, persönliche Beratung & 10 % Willkommensgutschein</title>
+<meta name="description" content="Die DEMAY Boutique mitten in Gummersbach: eigene Nischendüfte ab 22,50 €, persönliche Beratung aus über 15 Jahren Erfahrung, ohne Kaufdruck. Sichere dir 10 % Willkommensgutschein. Am Wehrenbeul 7 · Di & Do 11–18 Uhr.">
+<meta name="theme-color" content="#F7F4EF">
+<meta property="og:title" content="DEMAY Gummersbach — 10 % Willkommensgutschein">
+<meta property="og:description" content="Finde einen Duft, der dich erkennt. Nischendüfte & persönliche Beratung mitten in Gummersbach.">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="preload" as="image" href="assets/hero.jpg">
+<link rel="preload" href="assets/fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/CormorantGaramond-600.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  :root{
+    --canvas:#F7F4EF; --elevated:#FFFFFF; --subtle:#F1E9DE;
+    --border:#E7E0D6; --ink:#1F1A17; --secondary:#5F5A55; --muted:#756C63;
+    --brand:#7BC4C4; --brand-soft:#D8EFEF; --brand-ink:#2E7E7A; --gold:#B08D57;
+    --shadow-soft:0 8px 32px rgb(31 26 23 / .06);
+    --shadow-elevated:0 24px 60px rgb(31 26 23 / .12);
+    --radius:.5rem; --radius-lg:.85rem; --radius-xl:1.25rem;
+    --display:"Cormorant Garamond","Hoefler Text",Palatino,serif;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    --container:75rem;
+    --announce-h:38px; --header-h:60px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--canvas);line-height:1.6;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
+    font-feature-settings:'kern' on,'liga' on}
+  .wrap{width:min(var(--container),92%);margin-inline:auto}
+  section{padding:clamp(54px,8vw,100px) 0}
+  img{max-width:100%;display:block}
+
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
+  h1{font-size:clamp(42px,6.6vw,76px)}
+  h2{font-size:clamp(31px,4.7vw,52px)}
+  h3{font-size:clamp(20px,2.4vw,25px)}
+  p{color:var(--secondary)}
+  .lead{font-size:clamp(17px,1.7vw,20px);line-height:1.6}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.24em;font-size:11.5px;
+    font-weight:700;color:var(--brand-ink);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:1.5px;background:var(--brand)}
+  .center{text-align:center}.center .eyebrow{justify-content:center}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-family:var(--sans);
+    font-weight:600;font-size:15.5px;line-height:1;padding:16px 28px;border-radius:999px;border:1.5px solid transparent;
+    cursor:pointer;text-decoration:none;transition:.2s ease;white-space:nowrap}
+  .btn-primary{background:var(--ink);color:#F7F4EF}
+  .btn-primary:hover{background:#332c27;transform:translateY(-1px);box-shadow:var(--shadow-soft)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#F7F4EF}
+  .btn-light{background:var(--brand);color:var(--ink);border-color:var(--brand)}
+  .btn-light:hover{background:#6cbcbc}
+  .btn-outline{background:transparent;color:var(--brand-ink);border-color:var(--brand-ink)}
+  .btn-outline:hover{background:var(--brand-ink);color:#fff}
+  .btn-block{width:100%}
+  .btn-sm{padding:12px 22px;font-size:14px}
+
+  /* Announce */
+  .announce{height:var(--announce-h);display:flex;align-items:center;justify-content:center;
+    background:var(--ink);color:var(--brand-soft);font-size:12.5px;font-weight:500;letter-spacing:.02em;text-align:center;
+    padding:0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  @media(max-width:560px){.announce{font-size:11px;letter-spacing:0}}
+  .announce b{color:#fff;font-weight:700}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:40;height:var(--header-h);background:rgba(255,255,255,.88);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav .logo{height:26px;width:auto}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .nav-hours{display:none;font-size:13px;color:var(--secondary);font-weight:600}
+  .nav-hours b{color:var(--ink)}
+  @media(min-width:820px){.nav-hours{display:flex;gap:7px;align-items:center}.nav .logo{height:30px}}
+
+  /* Reveal motion */
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  .reveal{animation:rise .85s cubic-bezier(.2,.7,.2,1) both}
+  .d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}.d4{animation-delay:.36s}.d5{animation-delay:.46s}
+
+  /* HERO — full viewport */
+  /* Hintergrund an den Ton des Hero-Bilds angepasst, damit es nahtlos einblendet.
+     Bei transparentem ODER flachem #F7F4EF-Hero-Bild: background auf var(--canvas) zurücksetzen. */
+  .hero{position:relative;min-height:calc(100svh - var(--announce-h) - var(--header-h));
+    display:flex;flex-direction:column;overflow:hidden;background:#EFE7DC}
+  .hero-glow{position:absolute;top:-12%;right:-8%;width:60%;height:80%;pointer-events:none;
+    background:radial-gradient(circle at 60% 40%, rgba(123,196,196,.20), transparent 62%);filter:blur(8px)}
+  .hero-inner{flex:1;display:grid;gap:clamp(18px,4vw,56px);align-items:center;
+    padding-block:clamp(24px,4vw,40px)}
+  @media(min-width:900px){.hero-inner{grid-template-columns:1.05fr .95fr}}
+  .hero h1{margin:18px 0 .4em}
+  .hero h1 em{font-style:italic;color:var(--brand-ink)}
+  .hero .lead{max-width:32em}
+  .usp{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .usp .tag{display:inline-flex;align-items:center;gap:7px;background:var(--elevated);border:1px solid var(--border);
+    border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600;color:var(--ink)}
+  .usp .tag svg{color:var(--brand-ink)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px}
+  .rating{display:flex;align-items:center;gap:11px;margin-top:22px;font-size:13.5px;color:var(--muted)}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+
+  /* Hero visual (Platzhalter bis assets/hero.png da ist) */
+  .hero-figure{position:relative;display:grid;place-items:center;min-height:min(64svh,560px)}
+  .hero-figure .ph-art{width:100%;max-width:430px}
+  .hero-figure > img{width:auto;max-width:100%;max-height:min(70svh,600px);object-fit:contain}
+  .hero-figure .glow2{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(123,196,196,.28),transparent 68%);filter:blur(20px);z-index:-1}
+  .offer-chip{position:absolute;left:2%;bottom:6%;background:#fff;border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-elevated);padding:15px 19px;display:flex;align-items:center;gap:13px}
+  .offer-chip .pct{font-family:var(--display);font-size:42px;font-weight:600;color:var(--brand-ink);line-height:.9}
+  .offer-chip small{font-size:12px;color:var(--secondary);font-weight:600;line-height:1.25;max-width:120px}
+
+  /* Hero trust bar (im Viewport, premium) */
+  .hero-trust{border-top:1px solid var(--border);background:rgba(255,255,255,.5)}
+  .hero-trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;padding:14px 0}
+  .hero-trust .ti{display:flex;align-items:center;gap:9px;padding:6px 22px;font-size:12.5px;font-weight:600;color:var(--secondary)}
+  .hero-trust .ti + .ti{border-left:1px solid var(--border)}
+  .hero-trust .ti svg{color:var(--brand-ink);flex:none}
+  @media(max-width:680px){.hero-trust .ti{padding:6px 13px;font-size:11.5px}.hero-trust .ti:nth-child(n+4){display:none}}
+
+  /* Split */
+  .split{display:grid;gap:clamp(28px,5vw,56px);align-items:center}
+  @media(min-width:880px){.split{grid-template-columns:1fr 1fr}}
+  .split.rev .media{order:-1}
+  .split .media img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:var(--radius-xl);box-shadow:var(--shadow-soft)}
+  .split h2{margin:16px 0 .4em}
+  .ticks{list-style:none;display:grid;gap:13px;margin-top:22px}
+  .ticks li{display:flex;gap:12px;color:var(--ink);font-size:15.5px}
+  .ticks svg{flex:none;color:var(--brand-ink);margin-top:3px}
+
+  /* Voucher */
+  .voucher-sec{background:var(--brand-soft);position:relative;overflow:hidden}
+  .voucher{background:#fff;border-radius:var(--radius-xl);box-shadow:var(--shadow-elevated);overflow:hidden;position:relative;z-index:1}
+  .voucher-grid{display:grid}
+  @media(min-width:860px){.voucher-grid{grid-template-columns:1.02fr .98fr}}
+  .voucher .left{padding:clamp(32px,4.5vw,54px);background:var(--ink);color:#F7F4EF;position:relative;overflow:hidden}
+  .voucher .left::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-140px;bottom:-140px;
+    background:radial-gradient(circle,rgba(123,196,196,.34),transparent 70%)}
+  .ribbon{display:inline-block;background:var(--brand);color:var(--ink);font-size:11.5px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:18px}
+  .voucher .price{font-family:var(--display);font-size:clamp(66px,11vw,108px);line-height:.9;color:#fff;margin:6px 0 2px}
+  .voucher .price small{font-size:.30em;letter-spacing:.04em}
+  .voucher .left p{color:rgba(247,244,239,.82)}
+  .voucher ul{list-style:none;display:grid;gap:12px;margin-top:24px;position:relative;z-index:1}
+  .voucher ul li{display:flex;gap:11px;color:rgba(247,244,239,.92);font-size:15px}
+  .voucher ul svg{flex:none;color:var(--brand);margin-top:3px}
+  .voucher .right{padding:clamp(28px,4vw,46px);display:flex;flex-direction:column;justify-content:center}
+  .voucher .right h3{font-family:var(--display);font-size:27px;margin-bottom:5px}
+  .voucher .right .sub{font-size:14.5px;color:var(--muted);margin-bottom:20px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+  .field input{width:100%;padding:15px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:16px;
+    font-family:var(--sans);background:#fcfbf9;color:var(--ink)}
+  .field input:focus{outline:none;border-color:var(--brand-ink);background:#fff}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin:4px 0 16px}
+  .consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--brand-ink)}
+  .consent a{color:var(--brand-ink);font-weight:600}
+  .microtrust{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:12px;font-size:11.5px;color:var(--muted)}
+  .microtrust span{display:inline-flex;align-items:center;gap:5px}
+  .microtrust svg{color:var(--brand-ink)}
+  .form-success{display:none;text-align:center;padding:24px 8px}
+  .form-success .ok{width:60px;height:60px;border-radius:50%;background:var(--brand-soft);color:var(--brand-ink);
+    display:grid;place-items:center;margin:0 auto 16px}
+  .form-success h3{margin-bottom:6px}
+
+  /* Bestseller */
+  .bs-head{display:flex;flex-wrap:wrap;gap:14px 24px;justify-content:space-between;align-items:flex-end;margin-bottom:36px}
+  .bs-head p{max-width:42ch}
+  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,2vw,22px)}
+  @media(min-width:760px){.products{grid-template-columns:repeat(3,1fr)}}
+  .product{background:var(--elevated);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;text-align:center;transition:.22s ease}
+  .product:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+  .product .pic{background:var(--subtle);border-radius:var(--radius);aspect-ratio:1;display:grid;place-items:center;margin-bottom:14px;overflow:hidden}
+  .product .pic img{width:80%;height:80%;object-fit:contain;mix-blend-mode:multiply}
+  .product .brand{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-ink);font-weight:700}
+  .product .name{font-family:var(--display);font-size:22px;margin:3px 0 4px;color:var(--ink)}
+  .product .fam{font-size:12px;color:var(--muted);margin-bottom:8px;min-height:2.4em}
+  .product .price{font-size:14px;color:var(--ink);font-weight:600}
+  .bs-foot{text-align:center;margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .bs-foot .note{font-size:14.5px;color:var(--muted)}
+
+  /* Testimonials */
+  .tcarousel{position:relative;margin-top:40px}
+  .ttrack{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;
+    scrollbar-width:none;-ms-overflow-style:none}
+  .ttrack::-webkit-scrollbar{display:none}
+  .tcard{flex:0 0 88%;scroll-snap-align:center;background:var(--elevated);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column}
+  @media(min-width:680px){.tcard{flex-basis:46%}}
+  @media(min-width:1000px){.tcard{flex-basis:31%}}
+  .tcard .stars{margin-bottom:13px}
+  .tcard p{font-family:var(--display);font-size:22px;font-style:italic;color:var(--ink);line-height:1.32}
+  .tcard .who{margin-top:auto;padding-top:18px;font-size:13px;color:var(--muted);font-weight:600;font-style:normal}
+  .tnav{display:flex;justify-content:center;gap:10px;margin-top:18px}
+  .tnav button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);background:#fff;cursor:pointer;
+    display:grid;place-items:center;color:var(--ink);transition:.2s}
+  .tnav button:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+  .gbadge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--border);border-radius:999px;
+    padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--ink);box-shadow:var(--shadow-soft)}
+  .gbadge .stars{font-size:14px}
+
+  /* Store */
+  .store-grid{display:grid;gap:26px;align-items:stretch}
+  @media(min-width:880px){.store-grid{grid-template-columns:1fr 1fr}}
+  .store-info{background:var(--elevated);border:1px solid var(--border);border-radius:var(--radius-xl);padding:clamp(26px,3.6vw,40px);box-shadow:var(--shadow-soft)}
+  .store-info .find{font-size:15px;color:var(--secondary);line-height:1.6;margin-bottom:8px}
+  .store-info .find b{color:var(--ink)}
+  .store-info .row{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--border)}
+  .store-info .row:last-of-type{border-bottom:none}
+  .store-info .row svg{flex:none;color:var(--brand-ink);margin-top:2px}
+  .store-info .row b{display:block;font-size:15px;color:var(--ink)}
+  .store-info .row span{font-size:14.5px;color:var(--secondary)}
+  .hours-hi{display:inline-block;background:var(--brand-soft);color:var(--brand-ink);font-weight:700;padding:4px 11px;border-radius:8px;font-size:14.5px;margin-bottom:5px}
+  .hours-note{font-size:13px;color:var(--muted);font-style:italic}
+  .store-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .map-load{position:relative;min-height:340px;border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);
+    display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(135deg,#eef1ee,#e3eae8)}
+  .map-load p{font-size:13px;color:var(--muted);max-width:25em;margin:10px auto 16px}
+  .map-load iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* Final CTA */
+  .final{position:relative;color:#F7F4EF;text-align:center;overflow:hidden;background:var(--ink)}
+  .final .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34}
+  .final::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,18,15,.72),rgba(22,18,15,.82))}
+  .final .wrap{position:relative;z-index:1}
+  .final h2{color:#fff}
+  .final p{color:rgba(247,244,239,.82);max-width:42ch;margin:14px auto 16px}
+  .final .eyebrow{color:var(--brand);justify-content:center}.final .eyebrow::before{background:var(--brand)}
+  .final .gbadge{margin:8px auto 26px;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+
+  /* Footer */
+  footer.site{background:#16120f;color:#b9b3ab;padding:54px 0 36px}
+  footer .cols{display:grid;gap:28px}
+  @media(min-width:720px){footer .cols{grid-template-columns:1.5fr 1fr 1fr}}
+  footer .logo{height:30px;margin-bottom:16px}
+  footer p{color:#9a948c;font-size:14px;max-width:34ch}
+  footer h4{color:#fff;font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:13px}
+  footer a{color:#c7c1b9;text-decoration:none;font-size:14.5px;display:block;padding:3px 0}
+  footer a:hover{color:#fff}
+  footer .legal{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:20px;font-size:12.5px;color:#857f77;
+    display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+
+  /* Sticky mobile CTA */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:45;padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--border);transform:translateY(130%);transition:.3s ease}
+  .sticky-cta.show{transform:none}
+  @media(min-width:900px){.sticky-cta{display:none}}
+
+  /* Consent */
+  .consent-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--border);
+    box-shadow:0 -10px 40px rgb(0 0 0 / .08);padding:18px 0;display:none}
+  .consent-bar.show{display:block}
+  .consent-bar .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+  .consent-bar p{font-size:13px;max-width:64ch;color:var(--secondary)}
+  .consent-bar a{color:var(--brand-ink);font-weight:600}
+  .consent-actions{display:flex;gap:10px;flex:none}
+
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="top">
+
+<div class="announce">✦&nbsp;&nbsp;Sommer-Aktion · <b>10 % Willkommensgutschein</b> für deinen ersten Besuch in Gummersbach&nbsp;&nbsp;✦</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="#top" aria-label="DEMAY Startseite"><img class="logo" src="assets/demay-logo.svg" alt="DEMAY"></a>
+    <div class="nav-right">
+      <span class="nav-hours">Geöffnet:&nbsp;<b>Di &amp; Do · 11–18 Uhr</b></span>
+      <a class="btn btn-primary btn-sm" href="#gutschein">Gutschein sichern</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO (Full Viewport) ===================== -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow reveal d1">DEMAY &amp; IXORA · Boutique Gummersbach</span>
+      <h1 class="reveal d2">Finde einen Duft,<br>der dich <em>erkennt</em>.</h1>
+      <p class="lead reveal d3">Die DEMAY-Boutique mitten in Gummersbach: <strong>eigene Nischendüfte</strong>, die du hier sonst nirgends bekommst – und eine persönliche Beratung aus über <strong>15 Jahren Erfahrung</strong>. Ehrlich, in Ruhe, ohne Kaufdruck.</p>
+      <div class="usp reveal d3">
+        <span class="tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Düfte ab 22,50 €</span>
+        <span class="tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Eigene Kreationen</span>
+        <span class="tag"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Persönliche Beratung</span>
+      </div>
+      <div class="hero-cta reveal d4">
+        <a class="btn btn-primary" href="#gutschein">Gutschein per E-Mail sichern</a>
+        <a class="btn btn-ghost" href="#store">So findest du uns</a>
+      </div>
+      <div class="rating reveal d5">
+        <span class="stars">★★★★★</span>
+        <span><b style="color:var(--ink)">4,9 / 5</b> bei Google · 76 Bewertungen</span>
+      </div>
+    </div>
+
+    <!-- HERO-VISUAL: echtes KI-Bild (Hintergrund blendet mit der Hero-Farbe). -->
+    <div class="hero-figure reveal d3">
+      <div class="glow2" aria-hidden="true"></div>
+      <img src="assets/hero.jpg" alt="DEMAY Düfte – Boutique Gummersbach" width="1122" height="1402" fetchpriority="high">
+      <div class="offer-chip">
+        <span class="pct">10%</span>
+        <small>Willkommensgutschein auf deinen ersten Einkauf</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-trust">
+    <div class="wrap">
+      <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2 5 5 .5-3.8 3.3L16.5 17 12 14.3 7.5 17l1.3-5.2L5 8.5 10 8z"/></svg>Persönliche Beratung</span>
+      <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v5L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8V3"/></svg>Auf der Haut testen</span>
+      <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Faire Preise</span>
+      <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2.5 2.5 0 0 1 0 5H9V8m0 5v3"/></svg>Parken vor der Tür</span>
+      <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg>Ohne Kaufdruck</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WARUM VOR ORT ===================== -->
+<section>
+  <div class="wrap split rev">
+    <div class="media"><img src="assets/consultation.jpg" alt="Persönliche Duftberatung mit Duftstreifen bei DEMAY" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">Warum vor Ort</span>
+      <h2>Ein Duft lässt sich<br>nicht herunterladen.</h2>
+      <p class="lead">Man muss ihn riechen – auf der eigenen Haut, in Ruhe. Genau dafür gibt es unsere Boutique mitten in Gummersbach: ein Ort, an dem du dir Zeit nehmen darfst, statt zwischen Tür und Angel zu entscheiden.</p>
+      <ul class="ticks">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Du darfst schnuppern, vergleichen, wieder verwerfen – und auch ohne Kauf wieder gehen.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Wir hören zu, statt zu verkaufen – mit über 15 Jahren Erfahrung.</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Eigene Nischendüfte, die du in Gummersbach sonst nirgends findest.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUTSCHEIN ===================== -->
+<section class="voucher-sec" id="gutschein">
+  <div class="wrap">
+    <div class="voucher">
+      <div class="voucher-grid">
+        <div class="left">
+          <span class="ribbon">Sommer-Aktion · begrenzt</span>
+          <div style="font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brand)">Dein Willkommensgeschenk</div>
+          <div class="price">10 %<small>&nbsp;Rabatt</small></div>
+          <p>auf deinen ersten Einkauf in unserer Boutique Gummersbach – plus eine kostenlose persönliche Duftberatung.</p>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Gutschein bequem per E-Mail</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Kostenlose persönliche Duftberatung</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Einlösbar in der Boutique am Wehrenbeul 7</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Nur diesen Sommer – schnell sein lohnt sich</li>
+          </ul>
+        </div>
+        <div class="right">
+          <!-- TODO BREVO: Demo durch echte Brevo-Anbindung ersetzen (Brevo-Setup-Anleitung.md) -->
+          <form id="voucherForm" novalidate>
+            <h3>Gutschein sichern</h3>
+            <p class="sub">Trag dich ein – du bekommst deinen Code direkt per E-Mail.</p>
+            <div class="field">
+              <label for="vorname">Vorname <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+              <input type="text" id="vorname" name="VORNAME" autocomplete="given-name" placeholder="Wie dürfen wir dich nennen?">
+            </div>
+            <div class="field">
+              <label for="email">E-Mail-Adresse</label>
+              <input type="email" id="email" name="EMAIL" autocomplete="email" required placeholder="deine@email.de">
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="consent" required>
+              <span>Ja, ich möchte den Gutschein per E-Mail erhalten und bin mit der <a href="datenschutz.html">Datenschutzerklärung</a> einverstanden.</span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">Gutschein jetzt sichern</button>
+            <div class="microtrust">
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>DSGVO-konform</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Kein Spam</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Jederzeit abmeldbar</span>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h3>Fast geschafft!</h3>
+            <p style="margin-top:6px">Wir haben dir eine E-Mail geschickt. Bitte <b>bestätige sie kurz</b> – danach ist dein Gutschein da. Wir freuen uns auf dich in Gummersbach! 💚</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BESTSELLER ===================== -->
+<section>
+  <div class="wrap">
+    <div class="bs-head">
+      <div>
+        <span class="eyebrow">Beliebt in der Beratung</span>
+        <h2 style="margin-top:10px">Bestseller &amp; Empfehlungen</h2>
+      </div>
+      <p>Eigene Düfte aus den Häusern Demay und Ixora – fair gepreist, ehrlich beraten. Vor Ort warten über 300 weitere auf dich.</p>
+    </div>
+    <div class="products">
+      <div class="product"><div class="pic"><img src="assets/products/desire.jpg" alt="DEMAY Desire" loading="lazy"></div><div class="brand">Demay</div><div class="name">Desire</div><div class="fam">Fruchtig-blumig &amp; sinnlich</div><div class="price">ab 22,50 €</div></div>
+      <div class="product"><div class="pic"><img src="assets/products/ohlala.jpg" alt="DEMAY Ohlala" loading="lazy"></div><div class="brand">Demay</div><div class="name">Ohlala</div><div class="fam">Süß-verführerisch · Honig &amp; Blüten</div><div class="price">ab 22,50 €</div></div>
+      <div class="product"><div class="pic"><img src="assets/products/cherry-affair.jpg" alt="DEMAY Cherry Affair" loading="lazy"></div><div class="brand">Demay</div><div class="name">Cherry Affair</div><div class="fam">Kirsche, Mandel &amp; Tonka</div><div class="price">ab 38,50 €</div></div>
+      <div class="product"><div class="pic"><img src="assets/products/sahara.jpg" alt="DEMAY Sahara" loading="lazy"></div><div class="brand">Demay</div><div class="name">Sahara</div><div class="fam">Warm-orientalisch · Tonka &amp; Amber</div><div class="price">ab 25,50 €</div></div>
+      <div class="product"><div class="pic"><img src="assets/products/aristone.jpg" alt="IXORA B236 Aristone" loading="lazy"></div><div class="brand">Ixora</div><div class="name">B236 · Aristone</div><div class="fam">Blumig-ambriert · intensiv</div><div class="price">22,50 – 41,50 €</div></div>
+      <div class="product"><div class="pic"><img src="assets/products/yes.jpg" alt="IXORA B334 Yes" loading="lazy"></div><div class="brand">Ixora</div><div class="name">B334 · Yes</div><div class="fam">Chypre-blumig · elegant</div><div class="price">22,50 – 41,50 €</div></div>
+    </div>
+    <div class="bs-foot">
+      <p class="note">Alle Düfte entdeckst &amp; testest du in Ruhe vor Ort in Gummersbach.</p>
+      <a class="btn btn-outline btn-sm" href="https://shop.demay.de" target="_blank" rel="noopener">Lieber online bestellen? → shop.demay.de</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUNDER ===================== -->
+<section style="background:var(--elevated);border-block:1px solid var(--border)">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Mit Herz &amp; Erfahrung</span>
+      <h2>Mit Gefühl beraten.<br>Persönlich geführt.</h2>
+      <p class="lead">Ich bin Safiye – Gründerin und Inhaberin von DEMAY. Ein Duft kann Erinnerungen wecken, Stärke geben und dich durch deinen Tag begleiten.</p>
+      <p class="lead" style="margin-top:14px">Es ist mir eine Herzensangelegenheit, dass du genau den Duft findest, der dich wirklich widerspiegelt.</p>
+      <p style="margin-top:16px;font-size:14px;color:var(--muted)">Seit über 15 Jahren · eigene Duftlinien · Boutiquen in Deutschland &amp; Europa.</p>
+      <div style="font-family:var(--display);font-style:italic;font-size:40px;color:var(--ink);line-height:1;margin-top:20px">Safiye</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px">Inhaberin · DEMAY Gummersbach</div>
+    </div>
+    <!-- TODO: durch echtes Foto von Safiye ersetzen (kommt beim Drehtag) -->
+    <div class="media"><img src="assets/safiye.jpg" alt="Safiye, Gründerin und Inhaberin von DEMAY" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS (Slider) ===================== -->
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">Das sagen unsere Kund:innen</span>
+    <h2 style="margin:12px 0 16px">Vertrauen, das man riecht.</h2>
+    <span class="gbadge"><span class="stars">★★★★★</span> 4,9 / 5 · 76 Bewertungen bei Google</span>
+  </div>
+  <div class="wrap">
+    <div class="tcarousel">
+      <div class="ttrack" id="ttrack">
+        <div class="tcard"><div class="stars">★★★★★</div><p>„Einfach nur begeistert über die Beratung. Ein tolles, sehr zuvorkommendes Ehepaar, das auf jeden Wunsch eingegangen ist – nicht, um einfach Düfte zu verkaufen."</p><div class="who">— Burcu C. · Google</div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>„Ich bin einfach verliebt in den Duft ‚SaRe'. Der Duft hält wirklich sehr lang – das war mir besonders wichtig!"</p><div class="who">— Fatma G. · Google</div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><p>„Sehr nettes Ehepaar mit viel Parfümkenntnissen! Es gibt eigene Kreationen, die wirklich begeistern – mir hat es besonders ‚Emotion' angetan."</p><div class="who">— Susanne P. · Google</div></div>
+        <!-- WEITERE ECHTE GOOGLE-BEWERTUNGEN HIER EINFÜGEN (vom Inhaber) -->
+      </div>
+      <div class="tnav">
+        <button type="button" id="tprev" aria-label="Vorherige Bewertung"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button type="button" id="tnext" aria-label="Nächste Bewertung"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORE / AUFFINDBARKEIT ===================== -->
+<section style="background:var(--subtle)" id="store">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px">
+      <span class="eyebrow">Besuch uns</span>
+      <h2 style="margin-top:12px">Mitten in Gummersbach.</h2>
+    </div>
+    <div class="store-grid">
+      <div class="store-info">
+        <p class="find"><b>So findest du uns:</b> Du findest die DEMAY-Boutique mitten in der Gummersbacher Innenstadt, <b>Am Wehrenbeul 7</b> – nur wenige Schritte von der Fußgängerzone Kaiserstraße. Vom Bahnhof bzw. Forum Gummersbach bist du in wenigen Gehminuten bei uns.</p>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><b>Adresse</b><span>Am Wehrenbeul 7 · 51643 Gummersbach</span></div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Öffnungszeiten</b><span class="hours-hi">Dienstag &amp; Donnerstag · 11–18 Uhr</span><br><span class="hours-note">Wir öffnen bewusst nur zwei Tage – damit wir uns wirklich Zeit für dich nehmen.</span></div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2.5 2.5 0 0 1 0 5H9V8m0 5v3"/></svg>
+          <div><b>Parken</b><span>Parkplätze direkt vor der Tür (Parkplatz „Am Wehrenbeul") – kurz halten, reinschnuppern.</span></div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+          <div><b>Telefon</b><span>02261 2895254</span></div>
+        </div>
+        <div class="store-actions">
+          <a class="btn btn-primary" href="tel:+4922612895254">Anrufen</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=DEMAY+Am+Wehrenbeul+7+51643+Gummersbach" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div class="map-load" id="mapBox">
+        <div id="mapPlaceholder">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2E7E7A" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Aus Datenschutzgründen wird die Google-Karte erst auf Klick geladen.</p>
+          <button class="btn btn-primary btn-sm" id="loadMap" type="button">Karte anzeigen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final">
+  <img class="bg" src="assets/cta-bg.jpg" alt="" aria-hidden="true" loading="lazy">
+  <div class="wrap">
+    <span class="eyebrow">Nur diesen Sommer</span>
+    <h2 style="margin-top:14px">Dein Duft wartet in Gummersbach.</h2>
+    <p>Sichere dir 10 % Willkommensgutschein + kostenlose Duftberatung – und finde den Duft, der dich erkennt.</p>
+    <span class="gbadge"><span class="stars">★★★★★</span> 4,9 / 5 bei Google · 76 Bewertungen</span>
+    <div><a class="btn btn-light" href="#gutschein">Gutschein per E-Mail sichern</a></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img class="logo" src="assets/demay-logo.svg" alt="DEMAY">
+        <p>Persönliche Duftberatung – eigene Nischendüfte aus den Häusern Demay und Ixora, fair gepreist und ehrlich beraten.</p>
+      </div>
+      <div>
+        <h4>Boutique Gummersbach</h4>
+        <span style="display:block;color:#c7c1b9;font-size:14.5px;padding:3px 0">Am Wehrenbeul 7, 51643 Gummersbach</span>
+        <span style="display:block;color:#c7c1b9;font-size:14.5px;padding:3px 0">Di &amp; Do · 11–18 Uhr</span>
+        <a href="tel:+4922612895254">02261 2895254</a>
+        <a href="mailto:info@demay.de">info@demay.de</a>
+      </div>
+      <div>
+        <h4>Mehr</h4>
+        <a href="https://shop.demay.de" target="_blank" rel="noopener">Online-Shop</a>
+        <a href="https://www.instagram.com/demay_official/" target="_blank" rel="noopener">Instagram @demay_official</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Demay / Ixora Parfümerie</span>
+      <span>Made by GOSHA MUSASHI · Marketing &amp; Web</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-primary btn-block" href="#gutschein">10 % Gutschein sichern</a>
+</div>
+
+<div class="consent-bar" id="consentBar" role="dialog" aria-label="Cookie-Einwilligung">
+  <div class="wrap">
+    <p>Wir verwenden Cookies &amp; Tools (z. B. Meta-Pixel), um unsere Werbung zu messen und zu verbessern. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="consent-actions">
+      <button class="btn btn-ghost btn-sm" id="consentReject" type="button">Ablehnen</button>
+      <button class="btn btn-primary btn-sm" id="consentAccept" type="button">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Formular (Demo) — TODO BREVO */
+var form = document.getElementById('voucherForm');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var email=document.getElementById('email'), consent=document.getElementById('consent');
+  if(!email.value||!email.checkValidity()){ email.focus(); email.style.borderColor='#8E3A2A'; return; }
+  if(!consent.checked){ consent.focus(); return; }
+  form.style.display='none'; document.getElementById('formSuccess').style.display='block';
+});
+
+/* Karte erst auf Klick (DSGVO) */
+document.getElementById('loadMap').addEventListener('click', function(){
+  var f=document.createElement('iframe'); f.loading='lazy'; f.allowFullscreen=true; f.referrerPolicy='no-referrer-when-downgrade';
+  f.src='https://www.google.com/maps?q=Am+Wehrenbeul+7+51643+Gummersbach&output=embed';
+  var b=document.getElementById('mapBox'); b.innerHTML=''; b.appendChild(f);
+});
+
+/* Testimonials-Slider */
+(function(){
+  var track=document.getElementById('ttrack');
+  function step(){ var c=track.querySelector('.tcard'); return c?c.getBoundingClientRect().width+18:300; }
+  document.getElementById('tnext').addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+  document.getElementById('tprev').addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+})();
+
+/* Sticky Mobile CTA */
+var sticky=document.getElementById('stickyCta'), vsec=document.getElementById('gutschein'), hero=document.querySelector('.hero');
+var pastHero=false, atForm=false;
+function upd(){ sticky.classList.toggle('show', pastHero && !atForm); }
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(e){pastHero=!e[0].isIntersecting;upd();},{rootMargin:'-60px'}).observe(hero);
+  new IntersectionObserver(function(e){atForm=e[0].isIntersecting;upd();},{threshold:.2}).observe(vsec);
+}
+
+/* Consent / Meta-Pixel */
+var PIXEL_ID='DEINE_PIXEL_ID'; // TODO: echte Meta-Pixel-ID
+function loadPixel(){ if(window._fbqLoaded||PIXEL_ID==='DEINE_PIXEL_ID')return; window._fbqLoaded=true;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+  s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',PIXEL_ID);fbq('track','PageView'); }
+var bar=document.getElementById('consentBar');
+function setConsent(v){ try{localStorage.setItem('demay_consent',v);}catch(e){} bar.classList.remove('show'); if(v==='accepted')loadPixel(); }
+(function(){ var c; try{c=localStorage.getItem('demay_consent');}catch(e){}
+  if(c==='accepted')loadPixel(); else if(c!=='rejected')bar.classList.add('show'); })();
+document.getElementById('consentAccept').addEventListener('click',function(){setConsent('accepted');});
+document.getElementById('consentReject').addEventListener('click',function(){setConsent('rejected');});
+</script>
+</body>
+</html>
