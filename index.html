@@ -86,10 +86,10 @@
 
   /* HERO — full viewport */
   .hero{position:relative;min-height:calc(100svh - var(--announce-h) - var(--header-h));
-    display:flex;flex-direction:column;overflow:hidden}
+    display:flex;flex-direction:column;overflow:hidden;padding:0}
   .hero-glow{position:absolute;top:-12%;right:-8%;width:60%;height:80%;pointer-events:none;
     background:radial-gradient(circle at 60% 40%, rgba(123,196,196,.20), transparent 62%);filter:blur(8px)}
-  .hero-inner{flex:1;display:grid;gap:clamp(16px,4vw,52px);align-items:center;
+  .hero-inner{flex:1;display:grid;gap:clamp(16px,4vw,52px);align-items:center;align-content:center;
     padding-block:clamp(6px,1.5vw,16px)}
   @media(min-width:900px){.hero-inner{grid-template-columns:1.05fr .95fr}}
   .hero h1{margin:12px 0 .36em}
