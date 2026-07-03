@@ -313,14 +313,27 @@
   .btn-wa svg{flex:none}
   .wa-fab{position:fixed;right:18px;bottom:18px;z-index:46;width:57px;height:57px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 12px 30px rgb(0 0 0/.22);transition:transform .2s}
   .wa-fab:hover{transform:scale(1.07);color:#fff}
-  @media(max-width:899px){.wa-fab{bottom:calc(72px + env(safe-area-inset-bottom))}}
+  @media(max-width:899px){
+    .wa-fab{width:52px;height:52px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom))}
+    body:has(.sticky-cta.show) .wa-fab{bottom:calc(80px + env(safe-area-inset-bottom))}
+  }
+  @media(max-width:640px){.a-more{display:none}}
+  @media(max-width:480px){
+    .gbadge{font-size:12px;padding:8px 14px;flex-wrap:wrap;justify-content:center;text-align:center;row-gap:2px;border-radius:16px;line-height:1.4}
+  }
+  @media(max-width:639px){
+    .loc{padding:15px 18px}
+    .loc b{font-size:18px}
+    .loc a{margin-top:8px}
+    .locs{gap:10px}
+  }
 
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body id="top">
 
-<div class="announce">✦&nbsp;&nbsp;Sommer-Aktion · <b>10 % Willkommensgutschein</b> für deinen ersten Besuch in Gummersbach&nbsp;&nbsp;✦</div>
+<div class="announce">✦&nbsp;&nbsp;Sommer-Aktion&nbsp;·&nbsp;<b>10 % Willkommensgutschein</b><span class="a-more">&nbsp;für deinen ersten Besuch in Gummersbach</span>&nbsp;&nbsp;✦</div>
 
 <header class="site">
   <div class="wrap nav">
