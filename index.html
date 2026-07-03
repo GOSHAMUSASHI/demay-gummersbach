@@ -133,11 +133,19 @@
 
   /* Hero trust bar (im Viewport, premium) */
   .hero-trust{border-top:1px solid var(--border);background:rgba(255,255,255,.5)}
-  .hero-trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;padding:14px 0}
+  .hero-trust .wrap{padding:14px 0}
+  .hero-trust .ti-track{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0}
+  .hero-trust .ti.ti-dup{display:none}
   .hero-trust .ti{display:flex;align-items:center;gap:9px;padding:6px 22px;font-size:12.5px;font-weight:600;color:var(--secondary)}
   .hero-trust .ti + .ti{border-left:1px solid var(--border)}
   .hero-trust .ti svg{color:var(--brand-ink);flex:none}
-  @media(max-width:680px){.hero-trust .ti{padding:6px 13px;font-size:11.5px}.hero-trust .ti:nth-child(n+4){display:none}}
+  @media(max-width:680px){
+    .hero-trust .wrap{overflow:hidden}
+    .hero-trust .ti-track{flex-wrap:nowrap;justify-content:flex-start;width:max-content;animation:ti-marquee 22s linear infinite}
+    .hero-trust .ti.ti-dup{display:flex}
+    .hero-trust .ti{padding:6px 16px;font-size:11.5px}
+  }
+  @keyframes ti-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* Split */
   .split{display:grid;gap:clamp(28px,5vw,56px);align-items:center}
@@ -397,11 +405,13 @@
 
   <div class="hero-trust">
     <div class="wrap">
+      <div class="ti-track">
       <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2 5 5 .5-3.8 3.3L16.5 17 12 14.3 7.5 17l1.3-5.2L5 8.5 10 8z"/></svg>Persönliche Beratung</span>
       <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v5L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8V3"/></svg>Auf der Haut testen</span>
       <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Faire Preise</span>
       <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2.5 2.5 0 0 1 0 5H9V8m0 5v3"/></svg>Parken vor der Tür</span>
       <span class="ti"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6 9 17l-5-5"/></svg>Ohne Kaufdruck</span>
+      </div>
     </div>
   </div>
 </section>
@@ -721,6 +731,11 @@
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Trust-Badges: Mobile-Laufleiste nahtlos loopen (Duplikate anhängen) */
+(function(){ var t=document.querySelector('.hero-trust .ti-track'); if(!t)return;
+  t.querySelectorAll('.ti').forEach(function(el){ var c=el.cloneNode(true); c.setAttribute('aria-hidden','true'); c.classList.add('ti-dup'); t.appendChild(c); });
+})();
 
 /* Hero exakt auf die echte Viewport-Höhe bringen (kein Luft-Rest unten) */
 (function(){
